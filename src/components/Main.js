@@ -1,9 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import YouTube from 'react-youtube';
 
 function Main(props) {
 
+    const [state, setState] = useState({
+
+        searchedWords: ''
+
+    })
+
     const handleChanges = e => {
+
+        setState({
+            searchedWords: e.target.value
+        })
 
       };
 
@@ -16,12 +26,12 @@ function Main(props) {
     return (
 
         <div>
-
+            <div>{state.searchedWords}</div>
             <div>Youtube Search</div>
 
             <form onSubmit={submitForm} >
             
-            <input className="search" type="search" name="search" id="search" placeholder="Search" />
+            <input className="search" type="search" name="search" id="search" placeholder="Search" value={state.searchedWords} onChange={handleChanges}/>
 
             <button type="submit">Search</button>
 
