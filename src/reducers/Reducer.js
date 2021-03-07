@@ -6,7 +6,7 @@ import {
 
 const initialState = {
 
-    searched : {}
+    searched : "none"
     
   };
 
@@ -16,7 +16,7 @@ export const reducer = (state = initialState, action) => {
         case SEARCHED_WORDS:
         return {
             ...state,
-            searched: {action.payload}
+            searched: action.payload
         }
 
     }

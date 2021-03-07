@@ -1,7 +1,11 @@
 import React, {useState} from 'react';
 import YouTube from 'react-youtube';
+import { connect } from 'react-redux';
+import { searched_words } from '../actions/Actions';
 
 function Main(props) {
+    
+    console.log("HERE",props.returnedSearched)
 
     const [state, setState] = useState({
 
@@ -15,6 +19,8 @@ function Main(props) {
             searchedWords: e.target.value
         })
 
+        props.searched_words(e.target.value)
+
       };
 
     const submitForm = e => {
@@ -27,6 +33,15 @@ function Main(props) {
 
         <div>
             <div>{state.searchedWords}</div>
+
+            {props.returnedSearched? 
+                <div>{props.returnedSearched.searched}</div>
+            : (    
+                <div>none searched</div>
+            )}
+
+
+            <div>{}</div>
             <div>Youtube Search</div>
 
             <form onSubmit={submitForm} >
@@ -45,4 +60,15 @@ function Main(props) {
 
 }
 
-export default Main
+
+const dispatchToProps = {
+    searched_words
+  };
+  
+const mapStateToProps = state => {
+    return {
+        returnedSearched: state
+    };
+};
+
+export default connect(mapStateToProps,dispatchToProps)(Main)

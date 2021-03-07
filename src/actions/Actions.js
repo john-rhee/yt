@@ -5,6 +5,8 @@ export const doSearch = () => dispatch => {
 
 };
 
-export const searched_words = () => dispatch => {
+export const searched_words = (sWords) => dispatch => {
+ 
+    dispatch({type:SEARCHED_WORDS,payload:sWords})
 
 };
