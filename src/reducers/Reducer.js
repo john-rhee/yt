@@ -1,12 +1,14 @@
 import { 
 
-    SEARCHED_WORDS
+    SEARCHED_WORDS,
+    GET_VIDEO
 
 } from '../actions/Actions.js'
 
 const initialState = {
 
-    searched : "none"
+    searched : "none",
+    address : "none"
     
   };
 
@@ -17,6 +19,12 @@ export const reducer = (state = initialState, action) => {
         return {
             ...state,
             searched: action.payload
+        }
+
+        case GET_VIDEO:
+        return {
+            ...state,
+            address: action.payload
         }
 
     }

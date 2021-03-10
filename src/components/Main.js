@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import YouTube from 'react-youtube';
 import { connect } from 'react-redux';
-import { searched_words } from '../actions/Actions';
+import { searched_words, getResults } from '../actions/Actions';
 
 function Main(props) {
-    
-    console.log("HERE",props.returnedSearched)
 
     const [state, setState] = useState({
 
@@ -25,24 +23,28 @@ function Main(props) {
 
     const submitForm = e => {
         e.preventDefault();
-        console.log("Button Working")
+        console.log("Button Working");
+        props.getResults(props.returnedSearched.searched)
 
         }
 
     return (
 
         <div>
-            <div>{state.searchedWords}</div>
+
+            <div>Youtube Search</div>
 
             {props.returnedSearched? 
-                <div>{props.returnedSearched.searched}</div>
+                <div>You searched "{props.returnedSearched.searched}"</div>
             : (    
-                <div>none searched</div>
+                <div>You haven't searched anything</div>
             )}
 
-
-            <div>{}</div>
-            <div>Youtube Search</div>
+            {props.returnedSearched? 
+                <YouTube videoId={props.returnedSearched.address}/>
+            : (    
+                <YouTube videoId={"2g811Eo7K8U"}/>
+            )}
 
             <form onSubmit={submitForm} >
             
@@ -51,8 +53,7 @@ function Main(props) {
             <button type="submit">Search</button>
 
             </form>
-
-            <YouTube videoId="2g811Eo7K8U"/>
+            
         
         </div>
 
@@ -62,7 +63,8 @@ function Main(props) {
 
 
 const dispatchToProps = {
-    searched_words
+    searched_words,
+    getResults
   };
   
 const mapStateToProps = state => {
