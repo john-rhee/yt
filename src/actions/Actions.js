@@ -31,24 +31,5 @@ export const getResults = (q) => dispatch => {
             
             // dispatch({type:GET_FAILURE,payload:error})
     })
-
-    // axios
-    //     .get("https://youtube-search-results.p.rapidapi.com/youtube-search/?q=" + q, {
-
-    //         headers: {
-    //             "x-rapidapi-key": "86adcb47a2msheafa1ea838cc811p183211jsn624c5d1a6362",
-    //             "x-rapidapi-host": "youtube-search-results.p.rapidapi.com",
-    //             "useQueryString": true
-    //         }
-    //       })
-    //     .then(res => {
-    //         console.log('response',res)
-    //         dispatch({type:GET_VIDEO,payload:res.data.items[1].id})
-            
-    //     })
-    //     .catch(error => {
-            
-    //         // dispatch({type:GET_FAILURE,payload:error})
-    // })
     
 };
