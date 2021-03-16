@@ -4,6 +4,7 @@ export const DO_SEARCH = "DO_SEARCH";
 export const SEARCHED_WORDS = "SEARCHED_WORDS";
 export const GET_FAILURE = "GET_FAILURE";
 export const GET_VIDEO = "GET_VIDEO";
+export const GET_VIDEO_LIST = "GET_VIDEO_LIST";
 
 export const doSearch = () => dispatch => {
 
@@ -22,9 +23,9 @@ export const getResults = (q) => dispatch => {
 
           })
         .then(res => {
-            console.log('response',res)
-            console.log('response',res.data.items[1].id.videoId)
-            dispatch({type:GET_VIDEO,payload:res.data.items[1].id.videoId})
+            console.log('response',res.data.items)
+            dispatch({type:GET_VIDEO_LIST,payload:res.data.items})
+            
             
         })
         .catch(error => {

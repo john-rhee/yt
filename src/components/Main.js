@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import YouTube from 'react-youtube';
 import { connect } from 'react-redux';
 import { searched_words, getResults } from '../actions/Actions';
+import Video from './Video';
 
 function Main(props) {
 
@@ -28,23 +29,36 @@ function Main(props) {
 
         }
 
+    console.log(props.returnedSearched)    
+
     return (
 
         <div>
 
             <div>Youtube Search</div>
 
-            {props.returnedSearched? 
+            {props.returnedSearched.searched? 
                 <div>You searched "{props.returnedSearched.searched}"</div>
             : (    
                 <div>You haven't searched anything</div>
             )}
 
-            {props.returnedSearched? 
-                <YouTube videoId={props.returnedSearched.address}/>
+
+            {props.returnedSearched.data? 
+                <div>
+
+                    {console.log("returned data",props.returnedSearched.data)}
+
+                    {props.returnedSearched.data.map(videos => (
+                        <Video key={videos.id.videoId} videos={videos} />
+
+                    ))}
+                 
+                </div>
             : (    
                 <YouTube videoId={"2g811Eo7K8U"}/>
             )}
+
 
             <form onSubmit={submitForm} >
             
