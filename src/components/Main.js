@@ -43,7 +43,15 @@ function Main(props) {
                 <div>You haven't searched anything</div>
             )}
 
+            <form onSubmit={submitForm} >
+            
+                <input className="search" type="search" name="search" id="search" placeholder="Search" value={state.searchedWords} onChange={handleChanges}/>
 
+                <button type="submit">Search</button>
+
+            </form>
+
+                
             {props.returnedSearched.data? 
                 <div>
 
@@ -60,13 +68,7 @@ function Main(props) {
             )}
 
 
-            <form onSubmit={submitForm} >
             
-            <input className="search" type="search" name="search" id="search" placeholder="Search" value={state.searchedWords} onChange={handleChanges}/>
-
-            <button type="submit">Search</button>
-
-            </form>
             
         
         </div>

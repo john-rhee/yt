@@ -7,7 +7,9 @@ function Video(props) {
 return (
 
     <div> 
-        <YouTube videoId={props.videos.id.videoId}/>
+        <img src={props.videos.snippet.thumbnails.high.url}/>
+        <h4>{props.videos.snippet.title}</h4>
+        {/* <YouTube videoId={props.videos.id.videoId}/> */}
     </div>
 )
 
