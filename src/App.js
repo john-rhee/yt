@@ -5,11 +5,13 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      
-      <Main/>
+    
 
-    </div>
+      <div className="App">    
+        <Main/>
+      </div>
+
+    
   );
 }
 

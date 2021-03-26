@@ -3,6 +3,7 @@ import {
     SEARCHED_WORDS,
     GET_VIDEO_LIST,
     GET_VIDEO,
+    CLICKED,
 
 } from '../actions/Actions.js'
 
@@ -10,7 +11,8 @@ const initialState = {
 
     searched : null,
     address : null,
-    data: null
+    data: null,
+    clicked: null
     
   };
 
@@ -33,6 +35,12 @@ export const reducer = (state = initialState, action) => {
         return {
             ...state,
             data: action.payload
+        }
+
+        case CLICKED:
+        return {
+            ...state,
+            clicked: action.payload
         }
 
         default:

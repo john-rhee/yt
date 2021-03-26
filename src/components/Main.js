@@ -29,13 +29,14 @@ function Main(props) {
 
         }
 
+
     console.log(props.returnedSearched)    
 
     return (
 
         <div>
 
-            <div>Youtube Search</div>
+            <div className="top">Youtube Search</div>
 
             {props.returnedSearched.searched? 
                 <div>You searched "{props.returnedSearched.searched}"</div>
@@ -50,7 +51,14 @@ function Main(props) {
                 <button type="submit">Search</button>
 
             </form>
-
+            
+            {props.returnedSearched.clicked? 
+                <div>
+                <YouTube videoId={props.returnedSearched.clicked}/> 
+                </div>
+            : (    
+                null
+            )}
                 
             {props.returnedSearched.data? 
                 <div>

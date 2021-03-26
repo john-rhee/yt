@@ -1,15 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import YouTube from 'react-youtube';
+import { clicked } from '../actions/Actions';
 
 function Video(props) {
 
 return (
 
     <div> 
-        <img src={props.videos.snippet.thumbnails.high.url}/>
+        <img src={props.videos.snippet.thumbnails.high.url} onClick={() => {
+
+            props.clicked(props.videos.id.videoId);
+            window.scrollTo({
+                top: 0,
+                behavior: "auto"
+                })
+            }
+        } 
+        />
         <h4>{props.videos.snippet.title}</h4>
-        {/* <YouTube videoId={props.videos.id.videoId}/> */}
     </div>
 )
 
@@ -18,7 +26,7 @@ return (
 
 
 const dispatchToProps = {
-    
+    clicked
   };
   
 const mapStateToProps = state => {

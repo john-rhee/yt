@@ -5,6 +5,7 @@ export const SEARCHED_WORDS = "SEARCHED_WORDS";
 export const GET_FAILURE = "GET_FAILURE";
 export const GET_VIDEO = "GET_VIDEO";
 export const GET_VIDEO_LIST = "GET_VIDEO_LIST";
+export const CLICKED = "CLICKED";
 
 export const doSearch = () => dispatch => {
 
@@ -13,6 +14,12 @@ export const doSearch = () => dispatch => {
 export const searched_words = (sWords) => dispatch => {
  
     dispatch({type:SEARCHED_WORDS,payload:sWords})
+
+};
+
+export const clicked = (id) => dispatch => {
+ 
+    dispatch({type:CLICKED,payload:id})
 
 };
 
