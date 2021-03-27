@@ -6,7 +6,7 @@ function Video(props) {
 
 return (
 
-    <div> 
+    <div className="videodiv"> 
         <img src={props.videos.snippet.thumbnails.high.url} onClick={() => {
 
             props.clicked(props.videos.id.videoId);
@@ -16,8 +16,12 @@ return (
                 })
             }
         } 
+
+        className="videoimg"
+
         />
-        <h4>{props.videos.snippet.title}</h4>
+
+        <h4 className="videotitle">{props.videos.snippet.title}</h4>
     </div>
 )
 

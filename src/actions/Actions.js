@@ -26,7 +26,7 @@ export const clicked = (id) => dispatch => {
 export const getResults = (q) => dispatch => {
 
     axios
-        .get(`https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_API_KEY}&type=video&part=snippet&maxResults=10&q=` + q, {
+        .get(`https://www.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_API_KEY}&type=video&part=snippet&maxResults=21&q=` + q, {
 
           })
         .then(res => {

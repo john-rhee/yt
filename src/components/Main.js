@@ -3,6 +3,7 @@ import YouTube from 'react-youtube';
 import { connect } from 'react-redux';
 import { searched_words, getResults } from '../actions/Actions';
 import Video from './Video';
+import logo from '../img/ytlogo.png';
 
 function Main(props) {
 
@@ -35,16 +36,19 @@ function Main(props) {
     return (
 
         <div>
+            <div className="top">
+                <img src={logo} alt="Youtube logo" className="ytlogo"/>
+                <div className="topletter">Project</div>
+            </div>
+            
 
-            <div className="top">Youtube Search</div>
-
-            {props.returnedSearched.searched? 
+            {/* {props.returnedSearched.searched? 
                 <div>You searched "{props.returnedSearched.searched}"</div>
             : (    
                 <div>You haven't searched anything</div>
-            )}
+            )} */}
 
-            <form onSubmit={submitForm} >
+            <form className="sbar" onSubmit={submitForm} >
             
                 <input className="search" type="search" name="search" id="search" placeholder="Search" value={state.searchedWords} onChange={handleChanges}/>
 
@@ -61,7 +65,7 @@ function Main(props) {
             )}
                 
             {props.returnedSearched.data? 
-                <div>
+                <div className="list">
 
                     {console.log("returned data",props.returnedSearched.data)}
 
