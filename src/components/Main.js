@@ -76,7 +76,7 @@ function Main(props) {
                  
                 </div>
             : (    
-                <YouTube videoId={"2g811Eo7K8U"}/>
+                <YouTube className="videoplayer" videoId={"2g811Eo7K8U"}/>
             )}
 
 
