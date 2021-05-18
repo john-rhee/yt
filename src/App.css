@@ -196,6 +196,22 @@
     
   }
 
+  .videodes {
+
+    display: inline-block;
+    max-height: 30px;
+    max-width: 300px;
+    
+  }
+
+  .videotitle {
+
+    display: inline-block;
+    max-height: 28px;
+    max-width: 300px;
+  
+  }
+
 } 
 
 
