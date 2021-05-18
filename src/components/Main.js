@@ -58,7 +58,7 @@ function Main(props) {
             
             {props.returnedSearched.clicked? 
                 <div>
-                <YouTube videoId={props.returnedSearched.clicked}/> 
+                <YouTube className="videoplayer" videoId={props.returnedSearched.clicked}/> 
                 </div>
             : (    
                 null
