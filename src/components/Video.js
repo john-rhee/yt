@@ -29,7 +29,6 @@ return (
 
 }
 
-
 const dispatchToProps = {
     clicked
   };

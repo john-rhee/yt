@@ -40,13 +40,6 @@ function Main(props) {
                 <img src={logo} alt="Youtube logo" className="ytlogo"/>
                 <div className="topletter">Project</div>
             </div>
-            
-
-            {/* {props.returnedSearched.searched? 
-                <div>You searched "{props.returnedSearched.searched}"</div>
-            : (    
-                <div>You haven't searched anything</div>
-            )} */}
 
             <form className="sbar" onSubmit={submitForm} >
             
@@ -79,10 +72,6 @@ function Main(props) {
                 <YouTube className="videoplayer" videoId={"X2lIovmNsUY"}/>
             )}
 
-
-            
-            
-        
         </div>
 
     )

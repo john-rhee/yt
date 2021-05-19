@@ -37,7 +37,7 @@ export const getResults = (q) => dispatch => {
         })
         .catch(error => {
             
-            // dispatch({type:GET_FAILURE,payload:error})
+            dispatch({type:GET_FAILURE,payload:error})
     })
     
 };
