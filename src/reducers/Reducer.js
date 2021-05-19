@@ -4,6 +4,7 @@ import {
     GET_VIDEO_LIST,
     GET_VIDEO,
     CLICKED,
+    GET_FAILURE,
 
 } from '../actions/Actions.js'
 
