@@ -3,8 +3,7 @@ import {
     SEARCHED_WORDS,
     GET_VIDEO_LIST,
     GET_VIDEO,
-    CLICKED,
-    GET_FAILURE,
+    CLICKED
 
 } from '../actions/Actions.js'
 
